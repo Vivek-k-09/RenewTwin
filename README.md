@@ -1,34 +1,16 @@
-# RenewTwin AI
+# React + Vite
 
-RenewTwin AI is a campus microgrid digital twin and AI optimization platform for a university energy system with solar PV, wind generation, a battery energy storage system, campus demand, and utility grid imports.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## Implementation plan
+Currently, two official plugins are available:
 
-1. Build realistic hourly microgrid data generation for a full year and save it to the data layer.
-2. Train lightweight forecasting models for solar generation, wind generation, and campus demand using PyTorch.
-3. Implement a 24-hour optimization engine that minimizes utility cost while honoring battery and grid constraints.
-4. Add a digital twin simulation layer for scenario analysis and rule-based vs AI dispatch comparison.
-5. Expose the logic through a FastAPI backend and a Streamlit dashboard for interactive energy analysis.
-6. Run the verification scripts to confirm the models train, the optimizer satisfies constraints, and the app launches locally.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Repository structure
+## React Compiler
 
-- `data/` — data generation and time series loading
-- `models/` — PyTorch forecasting models and saved weights
-- `optimization/` — dispatch optimization engine
-- `digital_twin/` — scenario simulation and baseline comparison
-- `backend/` — FastAPI API server
-- `frontend/` — Streamlit dashboard
-- `tests/` — validation scripts and smoke tests
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Quick start
+## Expanding the Oxlint configuration
 
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-python data/generate_data.py
-python models/train_forecasters.py
-python -m uvicorn backend.main:app --reload
-streamlit run frontend/app.py
-```
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
